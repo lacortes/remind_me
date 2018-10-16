@@ -24,6 +24,9 @@ def create_app(test_config=None):
 
     @app.route('/hello')
     def hello():
-        return 'Hello World!'
+        return 'hello'
+
+    from . import twilio_handler
+    app.register_blueprint(twilio_handler.bp)
 
     return app
